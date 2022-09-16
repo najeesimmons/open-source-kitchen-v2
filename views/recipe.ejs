@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('./partials/nav.ejs') %>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <% if(typeof page !=='undefined' ) { %>
     <title>Recipe Blog - <%= page %></title>
     <% } else { %>
     <title>Recipe Blog</title>
     <% } %>
   </head>
+  <%- include ('./partials/nav.ejs') %>
   <body>
-    <div>
-      <h2><%= foundRecipe.title %></h2>
-    </div>
-    <div>
-      <img src="<%= foundRecipe.image %>" />
-    </div>
+    <h1><%= foundRecipe.title %></h1>
+    <img src="<%= foundRecipe.image %>" />
     <span>Created By <%= foundRecipe.user %></span>
     <div><%= foundRecipe.description %></div>
     <div>
@@ -53,12 +48,8 @@
       </button>
     </div>
 
-    <div class="reviewContainer">
-      <form
-        class="newRecipe"
-        action="/recipeblog/<%= foundRecipe.title %>"
-        method="POST"
-      >
+    <div>
+      <form action="/recipeblog/<%= foundRecipe.title %>" method="POST">
         <fieldset>
           <legend>Have you cooked this recipe?</legend>
           <span>Leave a review and let us know what you think!</span>
@@ -80,7 +71,7 @@
             <input name="comment" type="text" id="text" />
           </div>
           <input type="hidden" name="_id" value="<%" ="foundRecipe._id" % /> >
-          <button class="submit" type="submit">Submit</button>
+          <button type="submit">Submit</button>
         </fieldset>
       </form>
     </div>

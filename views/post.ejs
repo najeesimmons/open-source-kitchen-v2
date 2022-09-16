@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div>
+      <form action="/recipeblog/<%= foundRecipe %>" method="POST">
+        <fieldset>
+          <legend>Have you cooked this recipe?</legend>
+          <span>Leave a review and let us know what you think!</span>
+          <input
+            type="hidden"
+            name="recipes_id"
+            value=" <%= foundRecipe._id %> "
+          />
+          <div>
+            <label for="text">User</label>
+            <input name="user" type="text" id="text" placeholder="Your name" />
+          </div>
+          <div>
+            <label for="text">Headline</label>
+            <input name="title" type="text" id="text" />
+          </div>
+          <div>
+            <label for="text">Rating</label>
+            <input name="rating" type="number" id="number" placeholder="1-5" />
+          </div>
+          <div>
+            <label for="text">Comment</label>
+            <input name="comment" type="text" id="text" />
+          </div>
+          <input type="hidden" name="recipe" value=" <%= foundRecipe._id %> " />
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
