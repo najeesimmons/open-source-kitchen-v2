@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/nav.ejs') %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <% if(typeof page !=='undefined' ) { %>
+    <title>Recipe Blog - <%= page %></title>
+    <% } else { %>
+    <title>Recipe Blog</title>
+    <% } %>
+  </head>
+  <body>
+    <div>
+      <h2><%= foundRecipe.title %></h2>
+    </div>
+    <div>
+      <img src="<%= foundRecipe.image %>" />
+    </div>
+    <span>Created By <%= foundRecipe.user %></span>
+    <div><%= foundRecipe.description %></div>
+    <div>
+      <div>
+        <h3>Ingredients:</h3>
+        <ul>
+          <% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %>
+          <li><%= foundRecipe.ingredients[idx]%></li>
+          <%}%>
+        </ul>
+      </div>
+      <div>
+        <h3>Preperation:</h3>
+        <ul>
+          <% for(let idx=0; idx < foundRecipe.recipe.length; idx++){ %>
+          <li><%= foundRecipe.recipe[idx]%></li>
+          <%}%>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <form
+        action="/recipeblog/<%= foundRecipe.title%>?_method=DELETE"
+        method="POST"
+      >
+        <button>Delete</button>
+      </form>
+
+      <button>
+        <a href="/recipeblog/<%= foundRecipe.title%>/edit">Edit</a>
+      </button>
+    </div>
+
+    <div class="reviewContainer">
+      <form
+        class="newRecipe"
+        action="/recipeblog/<%= foundRecipe.title %>"
+        method="POST"
+      >
+        <fieldset>
+          <legend>Have you cooked this recipe?</legend>
+          <span>Leave a review and let us know what you think!</span>
+          <input type="hidden" name="recipe" value=" <%= foundRecipe._id %> " />
+          <div>
+            <label for="text">User</label>
+            <input name="user" type="text" id="text" placeholder="Your name" />
+          </div>
+          <div>
+            <label for="text">Headline</label>
+            <input name="title" type="text" id="text" />
+          </div>
+          <div>
+            <label for="text">Rating</label>
+            <input name="rating" type="number" id="number" placeholder="1-5" />
+          </div>
+          <div>
+            <label for="text">Comment</label>
+            <input name="comment" type="text" id="text" />
+          </div>
+          <input type="hidden" name="_id" value="<%" ="foundRecipe._id" % /> >
+          <button class="submit" type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <h1>User Reviews</h1>
+    <div>
+      <% for (let i = 0; i < foundRecipe.review.length; i++) { %>
+
+      <div>
+        <% if (foundRecipe.review.length < 1) { %> <%
+        console.log(foundRecipe.review.length)%>
+        <h3>No Reviews Yet.</h3>
+        <% } else { %>
+        <div>Rating: <%= foundRecipe.review[i].rating %></div>
+        <div>User: <%= foundRecipe.review[i].user %></div>
+        <div>Headline: <%= foundRecipe.review[i].title %></div>
+        <div>Comment: <%= foundRecipe.review[i].comment %></div>
+      </div>
+      <% } %> <% } %>
+    </div>
+  </body>
+</html>
