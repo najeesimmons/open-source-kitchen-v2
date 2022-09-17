@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./partials/head.ejs', {page: 'You messed up!'}) %>
+  <body>
+    <section>
+      <div>
+        <img
+          width="1000px"
+          src="https://cdn.dribbble.com/users/724182/screenshots/8587099/media/ef86c4bf895b58c47d1b353eabecad01.gif"
+          alt="not found"
+        />
+        <p>404 Not Found</p>
+        <% if (error) { %>
+        <p><%= error.message %></p>
+        <% } %>
+      </div>
+    </section>
+    <main>
+      <div>
+        <div>
+          <a href="recipeblog/home">Back To Home Page</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
