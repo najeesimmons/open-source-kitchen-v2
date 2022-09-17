@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <% if(typeof page !=='undefined' ) { %>
+    <title>Recipe Blog - <%= page %></title>
+    <% } else { %>
+    <title>Recipe Blog</title>
+    <% } %>
+  </head>
+  <%- include ('./partials/nav.ejs') %>
+  <body>
+    <h1>Fill out the fields to update this recipe</h1>
+    <div>
+      <form
+        action="/recipeblog/<%= foundRecipe.title %>?_method=PUT"
+        method="POST"
+      >
+        <fieldset>
+          <legend></legend>
+          <div>
+            <label for="text">Title</label>
+            <input
+              name="title"
+              type="text"
+              id="text"
+              value="<%= foundRecipe.title %>"
+            />
+          </div>
+          <input
+            name="image"
+            type="image"
+            id="formImage"
+            alt="Login"
+            src="<%= foundRecipe.image %>"
+          />
+          <div>
+            <label for="text">Image</label>
+            <input
+              name="image"
+              type="text"
+              id="text"
+              value="<%= foundRecipe.image %>"
+            />
+          </div>
+          <div>
+            <label for="text">Description</label>
+            <input
+              name="description"
+              type="text"
+              id="text"
+              value="<%= foundRecipe.description %>"
+            />
+          </div>
+          <div>
+            <label for="text">Author</label>
+            <input
+              name="user"
+              type="text"
+              id="text"
+              value="<%= foundRecipe.user%>"
+            />
+          </div>
+          <div>
+            <label for="text">Ingredients</label>
+            <input
+              name="ingredients"
+              type="text"
+              id="formIngredients"
+              value="
+                    <% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %>
+
+                    <%= foundRecipe.ingredients[idx]%>
+                            <%}%> "
+            />
+          </div>
+          <div>
+            <label for="text">Preperation</label>
+            <textarea
+              name="recipe"
+              type="text"
+              id="prep"
+              placeholder="Heat the oven to 425 degrees"
+              id="textarea-1"
+            ></textarea>
+          </div>
+          <div>
+            <label for="text">Category</label>
+            <input
+              name="category"
+              type="text"
+              id="text"
+              value="<%= foundRecipe.category%>"
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
