@@ -1,6 +1,7 @@
 body {
   max-width: 1000px;
   margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
 }
 
 .recipe-index-container {
@@ -42,7 +43,12 @@ body {
 }
 
 .recipe-show-description {
-    text-align: center;
+  text-align: center;
+}
+
+.recipe-input {
+  border: 1.5px solid rgb(247, 227, 216);
+  width: 85%;
 }
 
 .gen-heading {
@@ -82,17 +88,25 @@ body {
   margin-right: 10px;
 }
 
+.edit-button a {
+  color: white;
+}
+
 .delete-button {
   background-color: red;
 }
 
 .submit-button {
+  display: block;
+  margin: 0 auto;
   margin-top: 10px;
   background-color: rgb(60, 60, 222);
 }
 
 .form-border {
-  border: solid 1px black;
+  border: solid 2px rgb(238, 155, 2);
+  border-radius: 5px;
+  padding: 25px;
 }
 
 .user-tag {
@@ -101,4 +115,17 @@ body {
   margin-top: 5px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.post-inputs {
+  display: flex;
+  /* justify-content: end; */
+  padding: 15px;
+}
+
+.post-label {
+  display: flex;
+  justify-content: start;
+  width: 15%;
+  font-size: 1rem;
+  /* font-weight: 700; */
 }

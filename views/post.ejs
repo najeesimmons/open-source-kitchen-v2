@@ -4,72 +4,88 @@
   ('./partials/nav.ejs') %>
 
   <body>
-    <h1 class="gen-heading post-heading">Add your own recipe to Open Source Kitchen!</h1>
+    <h1 class="gen-heading post-heading">
+      Add your own recipe to Open Source Kitchen!
+    </h1>
     <div class="form-border">
       <form action="/recipeblog/home" method="POST">
         <fieldset>
-          <legend>What are we cooking?</legend>
-          <div>
-            <label for="text">Title</label>
+          <legend class="post-heading">So, what are we cooking?</legend>
+          <div class="post-inputs">
+            <label class="post-label" for="text">Title</label>
             <input
               name="title"
               type="text"
               id="text"
               placeholder="Creamy Potato Leek Soup with Dill"
+              class="recipe-input"
             />
           </div>
-          <div>
-            <label for="text">Image</label>
-            <input name="image" type="text" id="text" placeholder="https://" />
+          <div class="post-inputs">
+            <label class="post-label" for="text">Image</label>
+            <input
+              name="image"
+              type="text"
+              id="text"
+              placeholder="https://"
+              class="recipe-input"
+            />
           </div>
-          <div>
-            <label for="text">Description</label>
+          <div class="post-inputs">
+            <label class="post-label" for="text">Description</label>
             <input
               name="description"
               type="text"
               id="text"
               placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill."
+              class="recipe-input"
             />
           </div>
-          <div>
-            <label for="text">Author</label>
+          <div class="post-inputs">
+            <label class="post-label" for="text">Author</label>
             <input
               name="user"
               type="text"
               id="text"
               placeholder="Najee Simmons"
+              class="recipe-input"
             />
           </div>
-          <div>
-            <label for="text">Ingredients</label>
+          <div class="post-inputs">
+            <label class="post-label" for="text">Ingredients</label>
             <textarea
               name="ingredients"
               type="text"
               id="ingredients"
               placeholder="2 Tablespoons Olive Oil"
               id="textarea-1"
+              class="recipe-input"
             ></textarea>
           </div>
-          <div>
-            <label for="text">Preperation</label>
+          <div class="post-inputs">
+            <label class="post-label" for="text">Preperation</label>
             <textarea
               name="recipe"
               type="text"
               id="prep"
               placeholder="Heat the oven to 425 degrees"
               id="textarea-1"
+              class="recipe-input"
             ></textarea>
           </div>
-          <div>
-            <label for="text">Category</label>
+          <div class="post-inputs">
+            <label class="post-label" for="text">Category</label>
             <input
               name="category"
               type="text"
               id="text"
               placeholder="breakfast"
+              class="recipe-input"
             />
           </div>
-          <button class="button-style submit-button" type="submit">Submit</button>
+          <button class="button-style submit-button" type="submit">
+            Submit
+          </button>
         </fieldset>
       </form>
     </div>
