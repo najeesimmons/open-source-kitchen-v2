@@ -4,13 +4,17 @@
   ('./partials/nav.ejs') %>
 
   <body>
-    <h1><%= foundRecipe.title %></h1>
-    <img src="<%= foundRecipe.image %>" />
-    <span>Created By <%= foundRecipe.user %></span>
-    <div><%= foundRecipe.description %></div>
+    <h1 class="recipe-heading recipe-heading-show"><%= foundRecipe.title %> <span class="user-tag">by <%= foundRecipe.user %></span></h1>
+    
+    <div class="recipe-show-image-container">
+      <img src="<%= foundRecipe.image %>" class="recipe-show-image" />
+    </div>
+
+    <p class="recipe-show-description"><%= foundRecipe.description %></p>
+    
     <div>
       <div>
-        <h3>Ingredients:</h3>
+        <h3 class="gen-heading">Ingredients:</h3>
         <ul>
           <% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %>
           <li><%= foundRecipe.ingredients[idx]%></li>
@@ -18,7 +22,7 @@
         </ul>
       </div>
       <div>
-        <h3>Preperation:</h3>
+        <h3 class="gen-heading">Preperation:</h3>
         <ul>
           <% for(let idx=0; idx < foundRecipe.recipe.length; idx++){ %>
           <li><%= foundRecipe.recipe[idx]%></li>
@@ -26,22 +30,26 @@
         </ul>
       </div>
     </div>
-    <div>
+
+    <div class="buttons-box">
+      <button class="button-style edit-button">
+        <a href="/recipeblog/<%= foundRecipe.title%>/edit">Edit</a>
+      </button>
       <form
         action="/recipeblog/<%= foundRecipe.title%>?_method=DELETE"
         method="POST"
       >
-        <button>Delete</button>
+        <button class="button-style delete-button">Delete</button>
       </form>
-      <button>
-        <a href="/recipeblog/<%= foundRecipe.title%>/edit">Edit</a>
-      </button>
     </div>
+    <hr />
     <div>
       <form action="/recipeblog/<%= foundRecipe.title %>" method="POST">
         <fieldset>
-          <legend>Have you cooked this recipe?</legend>
-          <span>Leave a review and let us know what you think!</span>
+          <legend class="sub-heading">Have you cooked this recipe?</legend>
+          <span class="weak-heading"
+            >Leave a review and let us know what you think!</span
+          >
           <input type="hidden" name="recipe" value=" <%= foundRecipe._id %> " />
           <div>
             <label for="text">User</label>
@@ -64,7 +72,7 @@
         </fieldset>
       </form>
     </div>
-    <h1>User Reviews</h1>
+    <h1 class="weak-heading">User Reviews</h1>
     <div>
       <% for (let i = 0; i < foundRecipe.review.length; i++) { %>
       <div>

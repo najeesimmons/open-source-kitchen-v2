@@ -3,25 +3,35 @@
   <%- include ('./partials/head.ejs', {page: 'Recipe Blog' }) %> <%- include
   ('./partials/nav.ejs') %>
   <body>
-    <h1><%= category %></h1>
     <div>
+      <h1 class="gen-heading"><%= category %></h1>
+      <main class="recipe-index-container">
       <% for(let idx=0; idx < foundCategory.length; idx++){ %>
       <div>
         <div>
           <div>
             <div>
-              <img src="<%= foundCategory[idx].image %>" />
-            </div>
-            <a href="/recipeblog/<%= foundCategory[idx].title %>">
-              <div>
-                <h2><%= foundCategory[idx].title %></h2>
-              </div>
+                <a href="/recipeblog/<%= foundCategory[idx].title %>">
+              <img src="<%= foundCategory[idx].image %>" class="recipe-image" />
             </a>
+            </div>
+
+            <div>
+              <h2>
+                <a
+                  href="/recipeblog/<%= foundCategory[idx].title %>"
+                  class="recipe-heading"
+                  ><%= foundCategory[idx].title %></a
+                >
+              </h2>
+            </div>
+
             <div><%= foundCategory[idx].description %></div>
           </div>
         </div>
       </div>
       <% } %>
+    </main>
     </div>
   </body>
 </html>

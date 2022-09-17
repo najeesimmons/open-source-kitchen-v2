@@ -1,0 +1,104 @@
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.recipe-index-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 25px;
+}
+
+.recipe-heading {
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(238, 155, 2);
+}
+
+.recipe-heading-show {
+  text-align: center;
+}
+
+.recipe-show-image-container {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.recipe-show-image {
+  width: 100%;
+}
+
+.post-heading {
+  text-align: center;
+}
+
+.recipe-image {
+  border-radius: 50px;
+}
+
+.recipe-show-image {
+  border-radius: 50px;
+}
+
+.recipe-show-description {
+    text-align: center;
+}
+
+.gen-heading {
+  font-size: 35px;
+  margin: 30px 0 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sub-heading {
+  font-size: 25px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.weak-heading {
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons-box {
+  display: flex;
+  margin: 10px 0 10px;
+}
+
+.button-style {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.edit-button {
+  background-color: rgb(60, 60, 222);
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.submit-button {
+  margin-top: 10px;
+  background-color: rgb(60, 60, 222);
+}
+
+.form-border {
+  border: solid 1px black;
+}
+
+.user-tag {
+  color: black;
+  font-size: 15px;
+  margin-top: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
