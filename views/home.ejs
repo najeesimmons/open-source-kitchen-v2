@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('./partials/head.ejs', {page: 'Recipe Blog'}) %>
+    <%- include ('./partials/nav.ejs') %>
+    <body>
+        <main>
+            <div>
+                <% for(let idx = 0; idx < recipes.length; idx++){ %>   
+                            <div>
+                                <div>
+                                    <a href="/recipeblog/<%= recipes[idx].title %>">
+                                        <div>
+                                            <h2><%= recipes[idx].title %></h2>
+                                        </div>
+                                    </a>
+                                    <div>
+                                        <img src="<%= recipes[idx].image %>"/>
+                                    </div>
+                                    
+                                    <div>
+                                        <%= recipes[idx].description %>
+                                    </div>
+                    
+                                    <div>
+                                        <%= recipes[idx].ingredients %>
+                                    </div>
+                                </div>
+                            </div>
+                   
+                    </div>
+                <% } %>
+            </div>
+        </main>
+    </body>
+</html>                   
