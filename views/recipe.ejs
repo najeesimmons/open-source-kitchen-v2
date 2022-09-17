@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <% if(typeof page !=='undefined' ) { %>
-    <title>Recipe Blog - <%= page %></title>
-    <% } else { %>
-    <title>Recipe Blog</title>
-    <% } %>
-  </head>
-  <%- include ('./partials/nav.ejs') %>
+  <%- include ('./partials/head.ejs', {page: 'Recipe Blog' }) %> <%- include
+  ('./partials/nav.ejs') %>
+
   <body>
     <h1><%= foundRecipe.title %></h1>
     <img src="<%= foundRecipe.image %>" />
@@ -34,7 +26,6 @@
         </ul>
       </div>
     </div>
-
     <div>
       <form
         action="/recipeblog/<%= foundRecipe.title%>?_method=DELETE"
@@ -42,12 +33,10 @@
       >
         <button>Delete</button>
       </form>
-
       <button>
         <a href="/recipeblog/<%= foundRecipe.title%>/edit">Edit</a>
       </button>
     </div>
-
     <div>
       <form action="/recipeblog/<%= foundRecipe.title %>" method="POST">
         <fieldset>
@@ -70,16 +59,14 @@
             <label for="text">Comment</label>
             <input name="comment" type="text" id="text" />
           </div>
-          <input type="hidden" name="_id" value="<%" ="foundRecipe._id" % /> >
+          <input type="hidden" name="_id" value="" ="foundRecipe._id" /> >
           <button type="submit">Submit</button>
         </fieldset>
       </form>
     </div>
-
     <h1>User Reviews</h1>
     <div>
       <% for (let i = 0; i < foundRecipe.review.length; i++) { %>
-
       <div>
         <% if (foundRecipe.review.length < 1) { %> <%
         console.log(foundRecipe.review.length)%>

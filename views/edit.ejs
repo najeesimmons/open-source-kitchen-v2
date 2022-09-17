@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <% if(typeof page !=='undefined' ) { %>
-    <title>Recipe Blog - <%= page %></title>
-    <% } else { %>
-    <title>Recipe Blog</title>
-    <% } %>
-  </head>
-  <%- include ('./partials/nav.ejs') %>
+  <%- include ('./partials/head.ejs', {page: 'Recipe Blog' }) %> <%- include
+  ('./partials/nav.ejs') %>
   <body>
     <h1>Fill out the fields to update this recipe</h1>
     <div>
