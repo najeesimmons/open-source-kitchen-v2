@@ -1,38 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include ('./partials/head.ejs', {page: 'Recipe Blog'}) %> <%- include
+  ('./partials/nav.ejs') %>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
+
   <body>
+    <h1>Contribute your own recipe to Open Source Kitchen!</h1>
     <div>
-      <form action="/recipeblog/<%= foundRecipe %>" method="POST">
+      <form action="/recipeblog/home" method="POST">
         <fieldset>
-          <legend>Have you cooked this recipe?</legend>
-          <span>Leave a review and let us know what you think!</span>
-          <input
-            type="hidden"
-            name="recipes_id"
-            value=" <%= foundRecipe._id %> "
-          />
+          <legend>What are we cooking?</legend>
           <div>
-            <label for="text">User</label>
-            <input name="user" type="text" id="text" placeholder="Your name" />
+            <label for="text">Title</label>
+            <input
+              name="title"
+              type="text"
+              id="text"
+              placeholder="Creamy Potato Leek Soup with Dill"
+            />
           </div>
           <div>
-            <label for="text">Headline</label>
-            <input name="title" type="text" id="text" />
+            <label for="text">Image</label>
+            <input name="image" type="text" id="text" placeholder="https://" />
           </div>
           <div>
-            <label for="text">Rating</label>
-            <input name="rating" type="number" id="number" placeholder="1-5" />
+            <label for="text">Description</label>
+            <input
+              name="description"
+              type="text"
+              id="text"
+              placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill."
+            />
           </div>
           <div>
-            <label for="text">Comment</label>
-            <input name="comment" type="text" id="text" />
+            <label for="text">Author</label>
+            <input
+              name="user"
+              type="text"
+              id="text"
+              placeholder="Najee Simmons"
+            />
           </div>
-          <input type="hidden" name="recipe" value=" <%= foundRecipe._id %> " />
+          <div>
+            <label for="text">Ingredients</label>
+            <textarea
+              name="ingredients"
+              type="text"
+              id="ingredients"
+              placeholder="2 Tablespoons Olive Oil"
+              id="textarea-1"
+            ></textarea>
+          </div>
+          <div>
+            <label for="text">Preperation</label>
+            <textarea
+              name="recipe"
+              type="text"
+              id="prep"
+              placeholder="Heat the oven to 425 degrees"
+              id="textarea-1"
+            ></textarea>
+          </div>
+          <div>
+            <label for="text">Category</label>
+            <input
+              name="category"
+              type="text"
+              id="text"
+              placeholder="breakfast"
+            />
+          </div>
           <button type="submit">Submit</button>
         </fieldset>
       </form>
