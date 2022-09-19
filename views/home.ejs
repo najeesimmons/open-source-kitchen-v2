@@ -3,6 +3,9 @@
   <%- include ('./partials/head.ejs', {page: 'Recipe Blog'}) %> <%- include
   ('./partials/nav.ejs') %>
   <body>
+    <h1 class="home-heading">The Open Source Kitchen</h1>
+    <h3 class="home-sub-heading">Welcome. Explore our newest recipies!</h3>
+    <hr>
     <div>
       <main class="recipe-index-container">
         <% for(let idx = 0; idx < recipes.length; idx++){ %>

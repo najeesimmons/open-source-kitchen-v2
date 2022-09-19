@@ -3,90 +3,95 @@
   <%- include ('./partials/head.ejs', {page: 'Recipe Blog' }) %> <%- include
   ('./partials/nav.ejs') %>
   <body>
-    <h1>Fill out the fields to update this recipe</h1>
-    <div>
+    <h1 class="gen-heading post-heading">Fill out the fields to update this recipe</h1>
+    <div class="form-border">
       <form
         action="/recipeblog/<%= foundRecipe.title %>?_method=PUT"
         method="POST"
       >
         <fieldset>
           <legend></legend>
-          <div>
-            <label for="text">Title</label>
+          <div class="post-inputs">
+            <label class="post-label for="text">Title</label>
             <input
               name="title"
               type="text"
               id="text"
               value="<%= foundRecipe.title %>"
+              class="recipe-input"
             />
           </div>
-          <input
+          <!-- <input
             name="image"
             type="image"
             id="formImage"
             alt="Login"
             src="<%= foundRecipe.image %>"
-          />
-          <div>
-            <label for="text">Image</label>
+            style="padding-left : 15px"
+          /> -->
+          <div class="post-inputs">
+            <label class="post-label  for="text">Image</label>
             <input
               name="image"
               type="text"
               id="text"
               value="<%= foundRecipe.image %>"
+              class="recipe-input"
             />
           </div>
-          <div>
-            <label for="text">Description</label>
+          <div class="post-inputs">
+            <label class="post-label for="text">Description</label>
             <input
               name="description"
               type="text"
               id="text"
               value="<%= foundRecipe.description %>"
+              class="recipe-input"
             />
           </div>
-          <div>
-            <label for="text">Author</label>
+          <div class="post-inputs">
+            <label class="post-label for="text">Author</label>
             <input
               name="user"
               type="text"
               id="text"
               value="<%= foundRecipe.user%>"
+              class="recipe-input"
             />
           </div>
-          <div>
-            <label for="text">Ingredients</label>
+          <div class="post-inputs">
+            <label class="post-label for="text">Ingredients</label>
             <input
+            class="recipe-input"
               name="ingredients"
               type="text"
               id="formIngredients"
-              value="
-                    <% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %>
-
-                    <%= foundRecipe.ingredients[idx]%>
-                            <%}%> "
+              value="<% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %><%= foundRecipe.ingredients[idx]%>
+                          <%}%> "
             />
+            
           </div>
-          <div>
-            <label for="text">Preperation</label>
+          <!-- <div class="post-inputs">
+            <label class="post-label for="text">Preperation</label>
             <textarea
               name="recipe"
               type="text"
               id="prep"
-              placeholder="Heat the oven to 425 degrees"
               id="textarea-1"
+              class="recipe-input"
             ></textarea>
-          </div>
-          <div>
-            <label for="text">Category</label>
+          </div> -->
+          <div class="post-inputs">
+            <label class="post-label for="text">Category</label>
             <input
               name="category"
               type="text"
               id="text"
               value="<%= foundRecipe.category%>"
+              class="recipe-input"
             />
           </div>
-          <button type="submit">Submit</button>
+          <button class="button-style submit-button" type="submit">Submit</button>
         </fieldset>
       </form>
     </div>

@@ -4,16 +4,32 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.home-heading {
+  font-size: 60px;
+  color: rgb(255, 94, 0);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-weight: 200;
+}
+
+.home-sub-heading {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 200;
+}
+
 .recipe-index-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 25px;
+  margin-top: 50px;
 }
 
 .recipe-heading {
   font-size: 30px;
   text-decoration: none;
-  color: rgb(238, 155, 2);
+  color: rgb(255, 94, 0);
 }
 
 .center-text {
@@ -80,7 +96,7 @@ body {
 }
 
 .button-style {
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 15px;
   border-radius: 5px;
@@ -88,27 +104,21 @@ body {
 }
 
 .edit-button {
-  background-color: rgb(60, 60, 222);
   margin-right: 10px;
 }
 
 .edit-button a {
-  color: white;
-}
-
-.delete-button {
-  background-color: red;
+  color: black;
 }
 
 .submit-button {
   display: block;
   margin: 0 auto;
   margin-top: 10px;
-  background-color: rgb(60, 60, 222);
 }
 
 .form-border {
-  border: solid 2px rgb(238, 155, 2);
+  color: rgb(255, 94, 0);
   border-radius: 5px;
   padding: 25px;
 }
