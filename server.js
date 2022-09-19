@@ -20,6 +20,7 @@ app.get("/*", (req, res) => {
   return res.status(404).render("404", context);
 });
 
-app.listen(process.env.PORT || 3000, function () {
+const port = process.env.PORT || 3000
+app.listen(port, function () {
   console.log("Listening on PORT 3000");
 });
