@@ -1,7 +1,7 @@
 body {
   max-width: 1000px;
   margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .recipe-index-container {
@@ -16,7 +16,7 @@ body {
   color: rgb(238, 155, 2);
 }
 
-.recipe-heading-show {
+.center-text {
   text-align: center;
 }
 
@@ -44,6 +44,9 @@ body {
 
 .recipe-show-description {
   text-align: center;
+  font-weight: bold;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .recipe-input {
@@ -72,7 +75,8 @@ body {
 
 .buttons-box {
   display: flex;
-  margin: 10px 0 10px;
+  margin: 20px 0 10px;
+  justify-content: center;
 }
 
 .button-style {
@@ -118,7 +122,6 @@ body {
 }
 .post-inputs {
   display: flex;
-  /* justify-content: end; */
   padding: 15px;
 }
 
@@ -127,5 +130,11 @@ body {
   justify-content: start;
   width: 15%;
   font-size: 1rem;
-  /* font-weight: 700; */
+}
+
+.recipe-flex-container {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin: 0 20px;
 }

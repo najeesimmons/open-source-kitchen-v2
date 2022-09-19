@@ -2,17 +2,14 @@
 <html lang="en" class="has-navbar-fixed-top">
   <%- include ('./partials/head.ejs', {page: 'Recipe Blog' }) %> <%- include
   ('./partials/nav.ejs') %>
-
   <body>
-    
-
-    <div class="recipe-show-image-container">
-      <img src="<%= foundRecipe.image %>" class="recipe-show-image" />
-    </div>
-    <h1 class="recipe-heading recipe-heading-show">
+    <h1 class="recipe-heading center-text" style="margin-top : 30px"">
       <%= foundRecipe.title %>
       <span class="user-tag">by <%= foundRecipe.user %></span>
     </h1>
+    <div class="recipe-show-image-container">
+      <img src="<%= foundRecipe.image %>" class="recipe-show-image" />
+    </div>
     <p class="recipe-show-description"><%= foundRecipe.description %></p>
     <div class="buttons-box">
       <button class="button-style edit-button">
@@ -24,13 +21,9 @@
       >
         <button class="button-style delete-button">Delete</button>
       </form>
-     
     </div>
-    
-    
-
-    <div>
-      <div>
+    <div class="recipe-flex-container">
+      <div style="margin-right: 70px">
         <h3 class="gen-heading">Ingredients:</h3>
         <ul>
           <% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %>
@@ -47,35 +40,55 @@
         </ul>
       </div>
     </div>
-
-    
     <hr />
-    <div>
+    <div class="form-border">
       <form action="/recipeblog/<%= foundRecipe.title %>" method="POST">
         <fieldset>
-          <legend class="sub-heading">Have you cooked this recipe?</legend>
-          <span class="weak-heading"
-            >Leave a review and let us know what you think!</span
-          >
+          <div class="post-heading">
+            <legend class="sub-heading">Have you cooked this recipe?</legend>
+            <span class="weak-heading"
+              >Leave a review and let us know what you think!</span
+            >
+          </div>
           <input type="hidden" name="recipe" value=" <%= foundRecipe._id %> " />
-          <div>
-            <label for="text">User</label>
-            <input name="user" type="text" id="text" placeholder="Your name" />
+          <div class="post-inputs">
+            <label class="post-label" for="text">User</label>
+            <input
+              class="recipe-input"
+              name="user"
+              type="text"
+              id="text"
+              placeholder="Your name"
+            />
           </div>
-          <div>
-            <label for="text">Headline</label>
-            <input name="title" type="text" id="text" />
+          <div class="post-inputs">
+            <label class="post-label" for="text">Headline</label>
+            <input class="recipe-input" name="title" type="text" id="text" />
           </div>
-          <div>
-            <label for="text">Rating</label>
-            <input name="rating" type="number" id="number" placeholder="1-5" />
+          <div class="post-inputs">
+            <label class="post-label" for="text">Rating</label>
+            <input
+              class="recipe-input"
+              name="rating"
+              type="number"
+              id="number"
+              placeholder="1-5"
+            />
           </div>
-          <div>
-            <label for="text">Comment</label>
-            <input name="comment" type="text" id="text" />
+          <div class="post-inputs">
+            <label class="post-label" for="text">Comment</label>
+            <input class="recipe-input" name="comment" type="text" id="text" />
           </div>
-          <input type="hidden" name="_id" value="" ="foundRecipe._id" /> >
-          <button type="submit">Submit</button>
+          <input
+            class="recipe-input"
+            type="hidden"
+            name="_id"
+            value=""
+            ="foundRecipe._id"
+          />
+          <div class="center-text">
+            <button class="button-style" type="submit">Submit</button>
+          </div>
         </fieldset>
       </form>
     </div>
