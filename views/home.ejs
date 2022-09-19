@@ -4,13 +4,17 @@
   ('./partials/nav.ejs') %>
   <body>
     <h1 class="home-heading">The Open Source Kitchen</h1>
-    <h3 class="home-sub-heading">Welcome. Explore our newest recipies!</h3>
-    <hr>
+    <h3 class="home-sub-heading">Welcome! Explore our newest recipies:</h3>
+    <hr />
     <div>
       <main class="recipe-index-container">
         <% for(let idx = 0; idx < recipes.length; idx++){ %>
         <div class="recipe-index-box">
           <div>
+            
+            <div>
+              <img src="<%= recipes[idx].image %>" class="recipe-image" />
+            </div>
             <div>
               <h2>
                 <a
@@ -19,9 +23,6 @@
                   ><%= recipes[idx].title %></a
                 >
               </h2>
-            </div>
-            <div>
-              <img src="<%= recipes[idx].image %>" class="recipe-image" />
             </div>
             <div><%= recipes[idx].description %></div>
           </div>

@@ -1,7 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap");
+
 body {
   max-width: 1000px;
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
+}
+
+.brand-font {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Oleo Script Swash Caps", cursive;
+  font-size: 30px;
 }
 
 .home-heading {
@@ -11,12 +20,19 @@ body {
   display: flex;
   justify-content: center;
   font-weight: 200;
+  margin-top: 30px;
 }
 
 .home-sub-heading {
   font-size: 24px;
   text-align: center;
   font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.meal-category {
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .recipe-index-container {
@@ -118,7 +134,7 @@ body {
 }
 
 .form-border {
-  color: rgb(255, 94, 0);
+  border: 2px solid rgb(255, 94, 0);
   border-radius: 5px;
   padding: 25px;
 }
