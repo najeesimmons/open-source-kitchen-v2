@@ -15,6 +15,10 @@ app.use(methodOverride("_method"));
 app.use("/recipeblog", controllers.recipe);
 app.use("/review", controllers.review);
 
+app.get("/", (req, res) => {
+  res.redirect("/recipeblog/home")
+})
+
 app.get("/*", (req, res) => {
   const context = { error: req.error };
   return res.status(404).render("404", context);
